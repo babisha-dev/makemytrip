@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class BookingService {
 
     @Autowired private BookingRepository bookingRepository;
-    @Autowired private FlightRepository flightRepository;
+
     @Autowired private HotelRepository hotelRepository;
     @Autowired private CabRepository cabRepository;
     @Autowired private EmailService emailService;
@@ -34,14 +34,8 @@ public class BookingService {
         booking.setHotelCost(req.getHotelCost());
         booking.setCabCost(req.getCabCost());
         booking.setTotalCost(req.getTotalCost());
-
-        // Build human-readable details
-        if (req.getFlightId() != null) {
-            flightRepository.findById(req.getFlightId()).ifPresent(f ->
-                booking.setFlightDetails(f.getAirline() + " " + f.getFlightNumber() +
-                    " | " + f.getDepartureTime() + " - " + f.getArrivalTime())
-            );
-        }
+ 
+       
         if (req.getHotelId() != null) {
             hotelRepository.findById(req.getHotelId()).ifPresent(h ->
                 booking.setHotelDetails(h.getName() + ", " + h.getCity())
@@ -56,7 +50,6 @@ public class BookingService {
 
         Booking saved = bookingRepository.save(booking);
 
-        // Send confirmation email asynchronously
         new Thread(() -> emailService.sendBookingConfirmation(saved)).start();
 
         return saved;

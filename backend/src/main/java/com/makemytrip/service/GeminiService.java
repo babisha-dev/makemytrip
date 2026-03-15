@@ -63,15 +63,16 @@ public class GeminiService {
             headers.setContentType(MediaType.APPLICATION_JSON);
             HttpEntity<Map<String, Object>> entity = new HttpEntity<>(requestBody, headers);
 
-ResponseEntity<Map> response = restTemplate.postForEntity(url, entity, Map.class);            if (response.getStatusCode() == HttpStatus.OK && response.getBody() != null) {
-List<?> candidates = (List<?>) response.getBody().get("candidates");
+ResponseEntity<Map> response = restTemplate.postForEntity(url, entity, Map.class);     
+       if (response.getStatusCode() == HttpStatus.OK && response.getBody() != null) {
+                List<?> candidates = (List<?>) response.getBody().get("candidates");
                 if (candidates != null && !candidates.isEmpty()) {
-Map<?, ?> candidate = (Map<?, ?>) candidates.get(0);
+                   Map<?, ?> candidate = (Map<?, ?>) candidates.get(0);
                    Map<?, ?> contentMap = (Map<?, ?>) candidate.get("content");
-        List<?> parts = (List<?>) contentMap.get("parts");
-                    if (parts != null && !parts.isEmpty()) {
-Map<?, ?> part = (Map<?, ?>) parts.get(0);
-String text = (String) part.get("text");                       
+                   List<?> parts = (List<?>) contentMap.get("parts");
+                if (parts != null && !parts.isEmpty()) {
+                        Map<?, ?> part = (Map<?, ?>) parts.get(0);
+                        String text = (String) part.get("text");                       
                         text = text.replaceAll("```json\\s*", "").replaceAll("```\\s*", "").trim();
                         return text;
                     }
