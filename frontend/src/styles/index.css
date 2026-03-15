@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f8f9fa;
+  color: #1a1a1a;
+}
+
+.step-active  { background: #e63946; color: white; border-color: #e63946; }
+.step-done    { background: #22c55e; color: white; border-color: #22c55e; }
+.step-pending { background: white; color: #9ca3af; border-color: #e5e7eb; }
+
+.card {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.card-selected {
+  border: 2px solid #e63946;
+  box-shadow: 0 0 0 3px rgba(230,57,70,0.1);
+}
+
+.btn-primary {
+  background: #e63946;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-size: 15px;
+}
+.btn-primary:hover  { background: #c1121f; transform: translateY(-1px); }
+.btn-primary:active { transform: scale(0.98); }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+.btn-outline {
+  background: white;
+  color: #e63946;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 2px solid #e63946;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-size: 14px;
+}
+.btn-outline:hover { background: #fef2f2; }
+
+input, select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s;
+  background: white;
+}
+input:focus, select:focus { border-color: #e63946; box-shadow: 0 0 0 3px rgba(230,57,70,0.08); }
+
+label { font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px; display: block; }
+
+.fade-in { animation: fadeIn 0.3s ease-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+.spinner {
+  width: 20px; height: 20px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
