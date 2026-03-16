@@ -61,7 +61,7 @@ export default function MyBookingsPage() {
               </div>
             </div>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 12 }}>
-              {b.flightDetails && <span style={{ background: '#f3f4f6', padding: '4px 10px', borderRadius: 8, fontSize: 12, color: '#374151' }}>✈ {b.flightDetails}</span>}
+              {/*b.flightDetails && <span style={{ background: '#f3f4f6', padding: '4px 10px', borderRadius: 8, fontSize: 12, color: '#374151' }}>✈ {b.flightDetails}</span>*/}
               {b.hotelDetails  && <span style={{ background: '#f3f4f6', padding: '4px 10px', borderRadius: 8, fontSize: 12, color: '#374151' }}>🏨 {b.hotelDetails}</span>}
               {b.cabDetails    && <span style={{ background: '#f3f4f6', padding: '4px 10px', borderRadius: 8, fontSize: 12, color: '#374151' }}>🚗 {b.cabDetails}</span>}
             </div>

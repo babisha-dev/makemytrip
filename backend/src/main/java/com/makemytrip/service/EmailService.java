@@ -21,7 +21,7 @@ public class EmailService {
     private String appName;
 
     public void sendBookingConfirmation(Booking booking) {
-        // 1. Send confirmation email to user
+        
         try {
             MimeMessage message = mailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
@@ -35,7 +35,7 @@ public class EmailService {
             System.err.println("User email failed: " + e.getMessage());
         }
 
-        // 2. Send notification email to admin
+        
         try {
             MimeMessage adminMsg = mailSender.createMimeMessage();
             MimeMessageHelper adminHelper = new MimeMessageHelper(adminMsg, true, "UTF-8");
