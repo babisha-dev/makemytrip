@@ -1,34 +1,4 @@
--- MakeMyTrip Clone - Seed Data
--- Run this AFTER the app starts for the first time (tables auto-created by JPA)
 
--- ─────────────────────────────────────────────
--- FLIGHTS
--- ─────────────────────────────────────────────
-INSERT IGNORE INTO flights (id, airline, flight_number, origin, destination, departure_time, arrival_time, price, seats_available, flight_class) VALUES
-(1,  'IndiGo',       '6E-201',  'Mumbai',    'Delhi',     '06:00', '08:10', 4500,  120, 'ECONOMY'),
-(2,  'Air India',    'AI-101',  'Mumbai',    'Delhi',     '09:30', '11:45', 6200,  80,  'ECONOMY'),
-(3,  'SpiceJet',     'SG-301',  'Mumbai',    'Delhi',     '14:00', '16:15', 3800,  95,  'ECONOMY'),
-(4,  'Vistara',      'UK-801',  'Mumbai',    'Delhi',     '18:00', '20:10', 8500,  40,  'BUSINESS'),
-(5,  'IndiGo',       '6E-505',  'Delhi',     'Mumbai',    '07:00', '09:10', 4800,  110, 'ECONOMY'),
-(6,  'Air India',    'AI-202',  'Delhi',     'Mumbai',    '12:00', '14:15', 6500,  75,  'ECONOMY'),
-(7,  'IndiGo',       '6E-601',  'Mumbai',    'Goa',       '08:00', '09:20', 3200,  130, 'ECONOMY'),
-(8,  'SpiceJet',     'SG-701',  'Mumbai',    'Goa',       '11:00', '12:25', 2900,  100, 'ECONOMY'),
-(9,  'IndiGo',       '6E-702',  'Delhi',     'Goa',       '07:30', '09:30', 4200,  115, 'ECONOMY'),
-(10, 'Air India',    'AI-301',  'Delhi',     'Goa',       '13:00', '15:05', 5500,  60,  'ECONOMY'),
-(11, 'IndiGo',       '6E-801',  'Mumbai',    'Bangalore', '06:30', '08:00', 3500,  120, 'ECONOMY'),
-(12, 'Vistara',      'UK-901',  'Mumbai',    'Bangalore', '10:00', '11:35', 7200,  45,  'BUSINESS'),
-(13, 'IndiGo',       '6E-901',  'Delhi',     'Bangalore', '08:00', '10:30', 4900,  100, 'ECONOMY'),
-(14, 'SpiceJet',     'SG-401',  'Delhi',     'Bangalore', '15:00', '17:30', 4100,  85,  'ECONOMY'),
-(15, 'IndiGo',       '6E-111',  'Mumbai',    'Chennai',   '07:00', '08:45', 3800,  110, 'ECONOMY'),
-(16, 'Air India',    'AI-501',  'Delhi',     'Chennai',   '09:00', '11:30', 5200,  70,  'ECONOMY'),
-(17, 'IndiGo',       '6E-222',  'Mumbai',    'Hyderabad', '06:00', '07:30', 3200,  125, 'ECONOMY'),
-(18, 'SpiceJet',     'SG-501',  'Delhi',     'Hyderabad', '08:30', '10:45', 4400,  90,  'ECONOMY'),
-(19, 'IndiGo',       '6E-333',  'Mumbai',    'Kolkata',   '07:00', '09:30', 4600,  100, 'ECONOMY'),
-(20, 'Air India',    'AI-601',  'Delhi',     'Kolkata',   '06:30', '08:45', 4800,  80,  'ECONOMY');
-
--- ─────────────────────────────────────────────
--- HOTELS
--- ─────────────────────────────────────────────
 INSERT IGNORE INTO hotels (id, name, city, address, price_per_night, rating, amenities, hotel_type, image_url) VALUES
 (1,  'The Taj Mahal Palace',     'Mumbai',    'Apollo Bunder, Colaba',         18000, 5.0, 'Pool,Spa,Restaurant,WiFi,Gym',        'LUXURY',   'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400'),
 (2,  'Trident Nariman Point',    'Mumbai',    'Nariman Point',                  9500, 4.5, 'Pool,Restaurant,WiFi,Bar',            'PREMIUM',  'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400'),
@@ -51,9 +21,7 @@ INSERT IGNORE INTO hotels (id, name, city, address, price_per_night, rating, ame
 (19, 'Park Hyatt Hyderabad',     'Hyderabad', 'Banjara Hills',                 10000, 5.0, 'Pool,Spa,Restaurant,WiFi,Gym',        'LUXURY',   'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=400'),
 (20, 'Taj Krishna',              'Hyderabad', 'Banjara Hills Road No.1',        7500, 4.5, 'Pool,Restaurant,WiFi,Gym,Bar',        'PREMIUM',  'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=400');
 
--- ─────────────────────────────────────────────
--- CABS
--- ─────────────────────────────────────────────
+
 INSERT IGNORE INTO cabs (id, cab_type, provider, city, price_per_day, capacity, ac, description) VALUES
 (1,  'Hatchback',  'Ola',   'Mumbai',    1200, 4, true,  'Swift / WagonR — ideal for city travel'),
 (2,  'Sedan',      'Uber',  'Mumbai',    1600, 4, true,  'Honda City / Toyota Etios — comfortable sedan'),
