@@ -18,7 +18,7 @@ export default function HomePage() {
           Where do you want to go?
         </h1>
         <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: 15, margin: '0 0 24px' }}>
-          AI-powered trip planning · Flights · Hotels · Cabs · All in one place
+          AI-powered trip planning  · Hotels · Cabs · All in one place
         </p>
         <div style={{ background: 'white', borderRadius: '12px 12px 0 0', maxWidth: 860, margin: '0 auto', padding: '0' }}>
           <StepBar current={step} />

@@ -124,7 +124,7 @@ export default function AISuggestion({ searchData, onNext, onBack }) {
 
       <div style={{ display: 'flex', gap: 12, justifyContent: 'space-between' }}>
         <button className="btn-outline" onClick={onBack}>← Back</button>
-        <button className="btn-primary" onClick={onNext}>Choose Flights, Hotels & Cabs →</button>
+        <button className="btn-primary" onClick={onNext}>Choose  Hotels & Cabs →</button>
       </div>
     </div>
   )
